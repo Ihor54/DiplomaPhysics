@@ -1,0 +1,34 @@
+﻿<Window x:Class="DiplomaPhysics.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DiplomaPhysics"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Height="428">
+        <Label Content="Опис" HorizontalAlignment="Center" Margin="0,-1,0,0" VerticalAlignment="Top" Height="59" Width="110" FontSize="40" FontWeight="Bold" FontStretch="Medium"/>
+        <TextBlock HorizontalAlignment="Center" Height="96" Margin="0,73,0,0" Text="Програма оцінює якість системи передачі даних з оптичними посилювачами за допомогою розрахунку відношення сигнал/шум та BER" TextWrapping="Wrap" VerticalAlignment="Top" Width="704" FontSize="20" TextAlignment="Center" FontStyle="Normal"/>
+        <Label Content="Довжина ділянки:" HorizontalAlignment="Left" Height="34" Margin="25,206,0,0" VerticalAlignment="Top" Width="169" FontSize="16" FontWeight="Bold"/>
+        <Label Content="Інтенсивність насичення:" HorizontalAlignment="Left" Height="34" Margin="25,279,0,0" VerticalAlignment="Top" Width="219" FontSize="16" FontWeight="Bold"/>
+        <Label Content="Показник посилення:" HorizontalAlignment="Left" Height="34" Margin="429,206,0,0" VerticalAlignment="Top" Width="184" FontSize="16" FontWeight="Bold"/>
+        <Label Content="Потужність шуму:" HorizontalAlignment="Left" Height="34" Margin="429,279,0,0" VerticalAlignment="Top" Width="184" FontSize="16" FontWeight="Bold"/>
+        <TextBox x:Name="AreaLengthTextBox" HorizontalAlignment="Left" Height="28" Margin="237,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" FontSize="14" PreviewTextInput="TextBox_PreviewTextInputDouble" 
+               DataObject.Pasting="PastingHandlerDouble"/>
+        <TextBox x:Name="IntensityTextBox" HorizontalAlignment="Left" Height="29" Margin="237,282,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" FontSize="14" PreviewTextInput="TextBox_PreviewTextInputDouble" 
+            DataObject.Pasting="PastingHandlerDouble"/>
+        <TextBox x:Name="StrengthIndicatorTextBox" HorizontalAlignment="Left" Height="28" Margin="618,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" FontSize="14" PreviewTextInput="TextBox_PreviewTextInputDouble" 
+            DataObject.Pasting="PastingHandlerDouble"/>
+        <TextBox x:Name="NoisePowerTextBox" HorizontalAlignment="Left" Height="29" Margin="618,282,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" FontSize="14" PreviewTextInput="TextBox_PreviewTextInputDouble" 
+            DataObject.Pasting="PastingHandlerDouble"/>
+        <Label Content="Кількість посилювачів:" HorizontalAlignment="Left" Height="34" Margin="25,147,0,0" VerticalAlignment="Top" Width="200" FontSize="16" FontWeight="Bold"/>
+        <TextBox x:Name="AmplifiersNumberTextBox" HorizontalAlignment="Left" Height="30" Margin="233,149,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" FontSize="14" PreviewTextInput="TextBox_PreviewTextInputInt" 
+            DataObject.Pasting="PastingHandlerInt"/>
+        <Button Content="Змоделювати" HorizontalAlignment="Center" Margin="0,363,0,0" VerticalAlignment="Top" Width="184" Height="42" FontSize="16" FontWeight="Bold" Click="Button_Click"/>
+        <Label x:Name="ValidationMessage" Content="Будь ласка заповніть усі дані для графіку"  HorizontalAlignment="Center" Height="40" Margin="0,323,0,0" VerticalAlignment="Top" Width="284" Foreground="#FFFF0101" FontStyle="Italic" FontSize="14" Visibility="Hidden"/>
+        <Label Content="Кількість шматочків:" HorizontalAlignment="Left" Height="34" Margin="385,149,0,0" VerticalAlignment="Top" Width="200" FontSize="16" FontWeight="Bold"/>
+        <TextBox x:Name="PiecesNumberTextBox" HorizontalAlignment="Left" Height="30" Margin="593,151,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" FontSize="14" PreviewTextInput="TextBox_PreviewTextInputInt" 
+            DataObject.Pasting="PastingHandlerInt"/>
+
+    </Grid>
+</Window>
