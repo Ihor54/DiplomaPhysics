@@ -35,8 +35,8 @@ namespace DiplomaPhysics
             AmplifiersNumberTextBox.Text = "4";
             PiecesNumberTextBox.Text = "10";
             AreaLengthTextBox.Text = "150";
-            StrengthIndicatorTextBox.Text = "5.3";
-            IntensityTextBox.Text = "11.3";
+            StrengthIndicatorTextBox.Text = "22.6";
+            IntensityTextBox.Text = "25";
             NoisePowerTextBox.Text = "1";
 
         }

@@ -17,6 +17,7 @@ namespace DiplomaPhysics
         private double _noisePower;
         private double _areaLength_R;
         private int _numberOfPieces;
+        private double _eAR;
 
         private Amplifier[] _amplifiers;
         public Amplifier[] Amplifiers { get => _amplifiers; }
@@ -31,13 +32,14 @@ namespace DiplomaPhysics
             _noisePower = noisePower;
             _areaLength_R = areaLength;
             _numberOfPieces = numberOfPieces;
+            _eAR = Math.Pow(Math.E, FadingIndicator_a * _areaLength_R);
             CalcSignalsForAmplifiers();
             CalcNoise();
         }
 
         private void CalcSignalsForAmplifiers()
         {
-            var i1 = EnteringSignal_I0 * Math.Pow(Math.E, FadingIndicator_a * _areaLength_R);
+            var i1 = EnteringSignal_I0 * _eAR;
             var amplifiers = new List<Amplifier>();
             for(int i = 0;  i < _amplifierNumber; i++)
             {
@@ -46,7 +48,8 @@ namespace DiplomaPhysics
                 }
                 else
                 {
-                    amplifiers.Add(new Amplifier(amplifiers[i-1].AmplifierExit, _strengthIndicator_x0, PieceLength_d, _intensity, _numberOfPieces));
+                    var amplifierSignalEnter = amplifiers[i - 1].AmplifierExit * _eAR;
+                    amplifiers.Add(new Amplifier(amplifierSignalEnter, _strengthIndicator_x0, PieceLength_d, _intensity, _numberOfPieces));
                 }
             }
 
@@ -57,13 +60,14 @@ namespace DiplomaPhysics
 
         public void CalcNoise()
         {
+            var x0 = 5.3;
             var noise1 = new AmplifierNoise { NoiseEntry = 0, NoiseExit = _noisePower };
             var noises = new List<AmplifierNoise> { noise1 };
             for(int i = 1; i < _amplifierNumber; i++)
             {
                 var previousExitNoise = noises[noises.Count - 1].NoiseExit;
-                var entry = previousExitNoise * Math.Pow(Math.E, -1 * FadingIndicator_a * _areaLength_R);
-                var exit = entry * Math.Pow(Math.E, _strengthIndicator_x0 * _numberOfPieces * PieceLength_d) + _noisePower;
+                var entry = previousExitNoise * _eAR;
+                var exit = entry * Math.Pow(Math.E, x0 * _numberOfPieces * PieceLength_d) + _noisePower;
                 noises.Add(new AmplifierNoise { NoiseEntry = entry, NoiseExit = exit });
             }
 

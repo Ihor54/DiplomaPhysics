@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -49,7 +50,9 @@ namespace DiplomaPhysics
             }
 
             Labels = labels.ToArray();
-            //YFormatter = value => value.ToString("C");
+            YFormatter = value => value.ToString("0.###E+0", CultureInfo.InvariantCulture)
+                                        .Replace("E-", "x10^-")
+                                        .Replace("E+", "x10^"); 
 
             DataContext = this;
         }
