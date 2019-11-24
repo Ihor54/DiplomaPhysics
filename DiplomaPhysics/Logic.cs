@@ -83,7 +83,7 @@ namespace DiplomaPhysics
                 var m1 = amplifiers[i].AmplifierExit;
                 var m0 = noises[i].NoiseExit;
                 var Q = Math.Abs(m1 - m0) / (m1 * 0.1 + m0 * 0.1);
-                berPoints[i + 1] = Math.Pow(Math.E, -0.5 * Q) / (Q * Math.Sqrt(2 * Math.PI));
+                berPoints[i + 1] = Math.Pow(Math.E, -0.5 * Q) / (Q * Math.Sqrt(2 * Math.PI)) / Math.Pow(10, 10);
             }
 
             return berPoints;
