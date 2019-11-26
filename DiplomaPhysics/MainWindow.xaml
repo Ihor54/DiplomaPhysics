@@ -22,12 +22,12 @@
         <TextBox x:Name="NoisePowerTextBox" HorizontalAlignment="Left" Height="29" Margin="618,282,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" FontSize="14" PreviewTextInput="TextBox_PreviewTextInputDouble" 
             DataObject.Pasting="PastingHandlerDouble"/>
         <Label Content="Кількість посилювачів:" HorizontalAlignment="Left" Height="34" Margin="25,147,0,0" VerticalAlignment="Top" Width="200" FontSize="16" FontWeight="Bold"/>
-        <TextBox x:Name="AmplifiersNumberTextBox" HorizontalAlignment="Left" Height="30" Margin="233,149,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" FontSize="14" PreviewTextInput="TextBox_PreviewTextInputInt" 
+        <TextBox x:Name="AmplifiersNumberTextBox" HorizontalAlignment="Left" Height="30" Margin="237,149,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" FontSize="14" PreviewTextInput="TextBox_PreviewTextInputInt" 
             DataObject.Pasting="PastingHandlerInt"/>
         <Button Content="Змоделювати" HorizontalAlignment="Center" Margin="0,363,0,0" VerticalAlignment="Top" Width="184" Height="42" FontSize="16" FontWeight="Bold" Click="Button_Click"/>
         <Label x:Name="ValidationMessage" Content="Будь ласка заповніть усі дані для графіку"  HorizontalAlignment="Center" Height="40" Margin="0,323,0,0" VerticalAlignment="Top" Width="284" Foreground="#FFFF0101" FontStyle="Italic" FontSize="14" Visibility="Hidden"/>
-        <Label Content="Кількість шматочків:" HorizontalAlignment="Left" Height="34" Margin="385,149,0,0" VerticalAlignment="Top" Width="200" FontSize="16" FontWeight="Bold"/>
-        <TextBox x:Name="PiecesNumberTextBox" HorizontalAlignment="Left" Height="30" Margin="593,151,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" FontSize="14" PreviewTextInput="TextBox_PreviewTextInputInt" 
+        <Label Content="Кількість шматочків:" HorizontalAlignment="Left" Height="34" Margin="429,147,0,0" VerticalAlignment="Top" Width="200" FontSize="16" FontWeight="Bold"/>
+        <TextBox x:Name="PiecesNumberTextBox" HorizontalAlignment="Left" Height="30" Margin="618,149,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" FontSize="14" PreviewTextInput="TextBox_PreviewTextInputInt" 
             DataObject.Pasting="PastingHandlerInt"/>
 
     </Grid>

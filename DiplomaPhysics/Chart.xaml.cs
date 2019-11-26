@@ -46,7 +46,7 @@ namespace DiplomaPhysics
             var labels = new List<string>();
             for(var i = 1; i <= _logic.Amplifiers.Length; i++)
             {
-                labels.Add("Посилювач " + i);
+                labels.Add("" + i);
             }
 
             Labels = labels.ToArray();
@@ -57,5 +57,6 @@ namespace DiplomaPhysics
             DataContext = this;
         }
 
+     
     }
 }
